@@ -7,8 +7,12 @@ export function getRectanglePerimeter(length, width) {
         return "Width must be a number!";
     }
     else if (length < 0 || width < 0) {
-        return "Perimeter can not be negative!";
+        return "The dimensions of the rectangle can not be negative!";
     }
+    else if (length === 0 || width === 0) {
+        return "The dimensions of the rectangle must be greater than 0!";
+    }
+
     return 2 * (length + width);
 }
 
@@ -23,6 +27,9 @@ export function getRectangleArea(length, width) {
     else if (length < 0 || width < 0) {
         return "Area can not be negative!";
     }
+    else if (length === 0 || width === 0) {
+        return "The dimensions of the rectangle must be greater than 0!";
+    }
     return length * width;
 }
 
@@ -32,6 +39,9 @@ export function getRectangleInfo(length, width) {
     }
     else if (length < 0 || width < 0) {
         return "The dimensions of the rectangle can not be negative!";
+    }
+    else if (length === 0 || width === 0) {
+        return "The dimensions of the rectangle must be greater than 0!";
     }
     const area = getRectangleArea(length, width);
     const perimeter = getRectanglePerimeter(length, width);
